@@ -11,3 +11,7 @@
 .omakedb
 .omakedb.lock
 *.omc
+
+*.xbb
+
+.DS_Store

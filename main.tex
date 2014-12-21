@@ -3,14 +3,49 @@
 \usepackage{graphicx}
 \usepackage{macros}             % my macros
 
+%% テーマ
+\usetheme{default}              % 全体
+\usecolortheme{rose}        % 色
+\usefonttheme{structurebold}    % タイトルのフォント
+\usefonttheme{professionalfonts} % 数式のフォント用
+
+%% リストの形とか
+\useinnertheme{circles}
+
+%% 上に出てくる、目次の前、現在、後の名前を表示する
+\useoutertheme[subsection=false]{miniframes}
+
 %% 下の方にでる謎なナビゲーションを消す
 \setbeamertemplate{navigation symbols}{}
 
 %% ページ番号
 \setbeamertemplate{footline}[frame number]
-\setbeamerfont{footline}{size=\small}
+\setbeamerfont{footline}{size=\footnotesize}
 \setbeamercolor{footline}{fg=black,bg=black}
 
+%% 日本語フォントをゴシックに
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\familydefault}{\sfdefault}
+
+%% カスタムカラーテーマ (from beaver.sty)
+\definecolor{themecolor}{rgb}{0,0.1,0.4} % ここを変えるとタイトルの色とかかわる
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor*{palette primary}{fg=themecolor!60!black,bg=gray!30!white}
+\setbeamercolor*{palette secondary}{fg=themecolor!70!black,bg=gray!15!white}
+\setbeamercolor*{palette tertiary}{bg=gray!10!white,fg=themecolor!20!black}
+\setbeamercolor*{palette quaternary}{fg=themecolor,bg=gray!5!white}
+\setbeamercolor{titlelike}{parent=palette primary,fg=themecolor} % タイトルの色
+\setbeamercolor{frametitle}{bg=gray!10!white}                    % フレームタイトルの色
+\setbeamercolor{frametitle right}{bg=gray!60!white}
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+\setbeamercolor{local structure}{fg=themecolor!80!black} % enumerate, itemize の色
+
+%% 右下にロゴ
+%% \logo{\includegraphics[width=1.3cm]{./img/psg.png}}
+
+%% タイトルページ
 \title{My Beamer Template}
 \author{Shohei Yasutake}
 \institute{Tokyo Institute of Technology}
