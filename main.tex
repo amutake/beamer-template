@@ -1,6 +1,15 @@
-\documentclass{beamer}
+\documentclass[12pt,dvipdfmx]{beamer}
 
+\usepackage{graphicx}
+\usepackage{macros}             % my macros
+
+%% 下の方にでる謎なナビゲーションを消す
+\setbeamertemplate{navigation symbols}{}
+
+%% ページ番号
 \setbeamertemplate{footline}[frame number]
+\setbeamerfont{footline}{size=\small}
+\setbeamercolor{footline}{fg=black,bg=black}
 
 \title{My Beamer Template}
 \author{Shohei Yasutake}
@@ -11,18 +20,10 @@
 
 \maketitle
 
-\section{first}
-
-\begin{frame}{}
+\begin{frame}{Outline}
   \tableofcontents
 \end{frame}
 
-\begin{frame}{First slide}
-  This is first slide.
-\end{frame}
-
-\begin{frame}{First slide}
-  This is first slide.
-\end{frame}
+\input{slides.tex}
 
 \end{document}

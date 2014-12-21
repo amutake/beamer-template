@@ -1,11 +1,12 @@
-LATEX=platex -interaction=nonstopmode -kanji=utf8 -shell-escape
-DVIPDFM=dvipdfmx
+LATEX = platex -interaction=nonstopmode -kanji=utf8 -shell-escape
+DVIPDFM = dvipdfmx
 
-LATEXMAIN=main
+PDFNAME = main
+LATEXFILES = main slides
 
-LaTeXDocument($(LATEXMAIN), $(LATEXMAIN))
+LaTeXDocument($(PDFNAME), $(LATEXFILES))
 
-.DEFAULT: $(LATEXMAIN).pdf $(LATEXMAIN).dvi
+.DEFAULT: $(PDFNAME).pdf $(PDFNAME).dvi
 
 .PHONY: clean
 
