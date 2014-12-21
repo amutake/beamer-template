@@ -1,0 +1,33 @@
+\lstdefinelanguage{Erlang}{
+  mathescape=true,
+  texcl=false,
+  sensitive=true,
+  morecomment = [l]{//},
+  morecomment = [l]{///},
+  morecomment = [s]{/*}{*/},
+  moredelim=[is][\underbar]{_}{_},
+  morestring=[b]'',
+  sensitive = true,
+  %% preamble
+  morekeywords=[1]{
+    module, export, compile, type
+  },
+  %% syntax
+  morekeywords=[2]{
+    receive, end, try, catch, fun
+  },
+  %% string
+  morestring=[b]",
+  showstringspaces=false,
+  %% colors
+  identifierstyle={\ttfamily\color{black}},
+  keywordstyle=[1]{\ttfamily\color{dkgreen}},
+  keywordstyle=[2]{\ttfamily\color{dkblue}},
+  stringstyle=\ttfamily\color{dkviolet},
+  %%
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  literate={_}{{\_}}1,
+  basicstyle=\small
+}
