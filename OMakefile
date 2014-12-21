@@ -1,0 +1,14 @@
+LATEX=platex -interaction=nonstopmode -kanji=utf8 -shell-escape
+DVIPDFM=dvipdfmx
+
+LATEXMAIN=main
+
+LaTeXDocument($(LATEXMAIN), $(LATEXMAIN))
+
+.DEFAULT: $(LATEXMAIN).pdf $(LATEXMAIN).dvi
+
+.PHONY: clean
+
+clean:
+	rm -f *.aux *.pdf *.log *.dvi *.snm *.toc *.nav *.out *.fls
+	rm -f .omakedb .omakedb.lock *.omc
