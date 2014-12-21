@@ -43,6 +43,31 @@
   \end{alertblock}
 }
 
+\slide{Inference rules}{}{
+  from bcprules.sty placed at \tt{./sty/}
+
+  \infrule[Nil]{
+  }{
+    nil : list A
+  }
+
+  \infrule[Cons]{
+    a : A
+    \andalso
+    l : list A
+  }{
+    a :: l : list A
+  }
+}
+
+\slide{Source code}{Coq}{
+  \lstinputlisting[style=coqstyle]{./src/coq.v}
+}
+
+\slide{Source code}{Erlang}{
+  \lstinputlisting[style=erlangstyle]{./src/erlang.erl}
+}
+
 \section{Conclusion}
 
 \slide{Conclusion}{}{

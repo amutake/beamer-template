@@ -1,12 +1,20 @@
 \documentclass[12pt,dvipdfmx]{beamer}
 
-\usepackage{graphicx}
-\usepackage{macros}             % my macros
+%% for lstcoq
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dkviolet}{rgb}{0.6,0,0.4}
+\definecolor{dkblue}{rgb}{0,0,0.6}
+\definecolor{ltblue}{rgb}{0.2,0.2,1}
+
+\usepackage{graphicx,listings}
+\usepackage{sty/bcprules,sty/jlisting,sty/lstcoq} % sty ディレクトリ以下にあるものは sty/hoge のように sty/ をつける
+\usepackage{sty/jtygm,type1cm}                       % フォント関連の警告を消す
+\usepackage{macros}              % my macros
 
 %% テーマ
-\usetheme{default}              % 全体
-\usecolortheme{rose}        % 色
-\usefonttheme{structurebold}    % タイトルのフォント
+\usetheme{default}               % 全体
+\usecolortheme{rose}             % 色
+\usefonttheme{structurebold}     % タイトルのフォント
 \usefonttheme{professionalfonts} % 数式のフォント用
 
 %% リストの形とか
@@ -42,14 +50,42 @@
 \setbeamercolor*{fine separation line}{}
 \setbeamercolor{local structure}{fg=themecolor!80!black} % enumerate, itemize の色
 
-%% 右下にロゴ
-%% \logo{\includegraphics[width=1.3cm]{./img/psg.png}}
+%% listings
+%% Coq
+\lstdefinestyle{coqstyle}{
+  language=Coq,
+  breaklines=true,
+  basicstyle=\ttfamily\scriptsize,
+  frame=tb,
+  framesep=6pt,
+  captionpos=b
+}
+%% Erlang
+\lstdefinestyle{erlangstyle}{
+  language=Erlang,
+  breaklines=true,
+  basicstyle=\ttfamily\scriptsize,
+  frame=tb,
+  framesep=6pt,
+  captionpos=b
+}
+%% the others
+\lstset{
+  breaklines=true,
+  basicstyle=\ttfamily\scriptsize,
+  frame=tb,
+  framesep=6pt,
+  captionpos=b
+}
 
 %% タイトルページ
 \title{My Beamer Template}
 \author{Shohei Yasutake}
 \institute{Tokyo Institute of Technology}
 \date{\today}
+
+%% 右下にロゴ
+%% \logo{\includegraphics[width=1.3cm]{./img/psg.png}}
 
 \begin{document}
 
