@@ -11,5 +11,5 @@ LaTeXDocument($(PDFNAME), $(LATEXFILES))
 .PHONY: clean
 
 clean:
-	rm -f *.aux *.pdf *.log *.dvi *.snm *.toc *.nav *.out *.fls
+	rm -f *.aux *.pdf *.log *.dvi *.snm *.toc *.nav *.out *.fls *.vrb
 	rm -f .omakedb .omakedb.lock *.omc
