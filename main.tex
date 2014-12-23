@@ -1,101 +1,42 @@
-\documentclass[12pt,dvipdfmx]{beamer}
+\documentclass[11pt]{beamer}
 
-%% for lstcoq
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{dkviolet}{rgb}{0.6,0,0.4}
-\definecolor{dkblue}{rgb}{0,0,0.6}
-\definecolor{ltblue}{rgb}{0.2,0.2,1}
-%% listings
-\usepackage{listings,sty/jlisting}
-\usepackage{sty/lstcoq,sty/lsterlang}
+\usepackage{listings,graphicx,amsmath,caption}
+\usepackage{newtxtext,newtxmath}
+\usepackage{bcprules}
+\usepackage{lstcoq,lsterlang}
+\usepackage{macros}
 
-\usepackage{graphicx,amsmath,fancyvrb,latexsym}
-\usepackage{sty/bcprules} % sty ディレクトリ以下にあるものは sty/hoge のように sty/ をつける
-\usepackage{sty/jtygm,type1cm}                       % フォント関連の警告を消す
-\usepackage{macros}              % my macros
+%% テーマ (theme ディレクトリにある)
+\usetheme{amutake}
 
-%% テーマ
-\usetheme{default}               % 全体
-\usecolortheme{rose}             % 色
-\usefonttheme{structurebold}     % タイトルのフォント
-\usefonttheme{professionalfonts} % 数式のフォント用
-
-%% リストの形とか
-\useinnertheme{circles}
-
-%% 上に出てくる、目次の前、現在、後の名前を表示する
-\useoutertheme[subsection=false]{miniframes}
-
-%% 下の方にでる謎なナビゲーションを消す
-\setbeamertemplate{navigation symbols}{}
-
-%% ページ番号
-\setbeamertemplate{footline}[frame number]
-\setbeamerfont{footline}{size=\footnotesize}
-\setbeamercolor{footline}{fg=black,bg=black}
-
-%% 日本語フォントをゴシックに
-\renewcommand{\kanjifamilydefault}{\gtdefault}
-\renewcommand{\familydefault}{\sfdefault}
-
-%% カスタムカラーテーマ (from beaver.sty)
-\definecolor{themecolor}{rgb}{0,0.1,0.4} % ここを変えるとタイトルの色とかかわる
-
-\setbeamercolor{section in toc}{fg=black,bg=white}
-\setbeamercolor*{palette primary}{fg=themecolor!60!black,bg=gray!30!white}
-\setbeamercolor*{palette secondary}{fg=themecolor!70!black,bg=gray!15!white}
-\setbeamercolor*{palette tertiary}{bg=gray!10!white,fg=themecolor!20!black}
-\setbeamercolor*{palette quaternary}{fg=themecolor,bg=gray!5!white}
-\setbeamercolor{titlelike}{parent=palette primary,fg=themecolor} % タイトルの色
-\setbeamercolor{frametitle}{bg=gray!10!white}                    % フレームタイトルの色
-\setbeamercolor{frametitle right}{bg=gray!60!white}
-\setbeamercolor*{separation line}{}
-\setbeamercolor*{fine separation line}{}
-\setbeamercolor{local structure}{fg=themecolor!80!black} % enumerate, itemize の色
+%% フォント設定
+%% luatexja については http://sourceforge.jp/projects/luatex-ja/wiki/FrontPage の使い方とドキュメントを参照のこと
+\usepackage{luatexja-fontspec}
+\setmainfont{Baskerville}
+\setsansfont[BoldFont=Helvetica]{Helvetica Light}
+\setmonofont{Inconsolata}
+% 欧文は sans だけど日本語は main (serif) になる。日本語フォントを sans にする方法は不明
+\setmainjfont[BoldFont=Hiragino Kaku Gothic ProN W6]{Hiragino Kaku Gothic ProN W3}
+\setsansjfont[BoldFont=Hiragino Kaku Gothic ProN W6]{Hiragino Kaku Gothic ProN W3}
 
 %% url
-\definecolor{links}{HTML}{2A1B81}
+\definecolor{links}{HTML}{2B42A1}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 %% listings
-%% Coq
-\lstdefinestyle{coqstyle}{
-  language=Coq,
+\renewcommand{\lstlistingname}{code}
+\lstdefinestyle{default}{
   breaklines=true,
   basicstyle=\ttfamily\scriptsize,
   frame=tb,
   framesep=6pt,
   captionpos=b
 }
-%% Erlang
-\lstdefinestyle{erlangstyle}{
-  language=Erlang,
-  breaklines=true,
-  basicstyle=\ttfamily\scriptsize,
-  frame=tb,
-  framesep=6pt,
-  captionpos=b
-}
-%% the others
 \lstset{
-  breaklines=true,
-  basicstyle=\ttfamily\scriptsize,
-  frame=tb,
-  framesep=6pt,
-  captionpos=b
+  style=default
 }
-
-%% fancyvrb
-\fvset{
-  frame=single,
-  framesep=1mm,
-  fontfamily=ttfamily,
-  fontsize=\scriptsize,
-  numbers=left,
-  framerule=.3mm,
-  numbersep=1mm,
-  commandchars=\\\{\}
-}
+\DeclareCaptionLabelFormat{code}{code #2}
+\captionsetup[lstlisting]{labelformat=code,labelfont={scriptsize},font={scriptsize}}
 
 %% タイトルページ
 \title{My Beamer Template}

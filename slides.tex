@@ -2,20 +2,31 @@
 
 \slide{Introduction}{}{
   This is the first slide.
-
+  \\~\\
   これは自分の Beamer のテンプレートです。
+  \\~\\
+  空行は \texttt{\textbackslash\textbackslash\textasciitilde\textbackslash\textbackslash} です
 }
 
 \section{Body}
 
+\subsection{hoge}
+
 \slide{Itemize}{}{
   Body Section
-  \begin{itemize}
+
+  wideitemize - itemize
+  \begin{wideitemize} % 間がちょっと広い
   \item Coq
   \item Haskell
+  \item ML
+    \begin{itemize}
+    \item OCaml
+    \item SML
+    \item SML\#
+    \end{itemize}
   \item Scala
-  \item OCaml
-  \end{itemize}
+  \end{wideitemize}
 }
 
 \slide{日本語}{}{
@@ -27,6 +38,8 @@
   \end{align}
 }
 
+\subsection{block 系}
+
 \slide{Block}{block,exampleblock,alertblock}{
   \begin{block}{block}
     \tt{block}
@@ -35,7 +48,7 @@
   \begin{exampleblock}{exampleblock}
     \tt{exampleblock}
 
-    \tt{Theorem modus\_ponens : forall P Q, P -> (P -> Q) -> Q}
+    \coqinline{Theorem modus\_ponens : forall P Q, P -> (P -> Q) -> Q}
   \end{exampleblock}
 
   \begin{alertblock}{alertlock}
@@ -43,8 +56,44 @@
   \end{alertblock}
 }
 
+\slide{Theorem}{theorem,corollary, fact, lemma}{
+  \begin{theorem}[すごい定理]
+    For any $a \in A$, $a$ はなんかすごい性質を満たす
+  \end{theorem}
+
+  \begin{corollary}[すごい系]
+    For any $a \in A$, $a$ はなんかすごい性質を満たす
+  \end{corollary}
+
+  \begin{fact}[すごい事実]
+    For any $a \in A$, $a$ はなんかすごい性質を満たす
+  \end{fact}
+
+  \begin{lemma}[すごい補題]
+    For any $a \in A$, $a$ はなんかすごい性質を満たす
+  \end{lemma}
+}
+
+\slide{Definition}{}{
+  \begin{definition}[基本的な定義]
+    ほげ
+  \end{definition}
+
+  \begin{example}[例っぽい]
+    「なになにっぽい」ってなんなんでしょうか
+  \end{example}
+
+  \begin{proof}[すごい定理の証明です]
+    明らか
+  \end{proof}
+
+  \begin{proof}
+    すごい定理から明らか
+  \end{proof}
+}
+
 \slide{Inference rules}{}{
-  from bcprules.sty placed at \tt{./sty/}
+  from bcprules.sty placed at \texttt{./sty/}
 
   \infrule[Nil]{
   }{
@@ -60,12 +109,37 @@
   }
 }
 
+\subsection{Source Codes}
+
 \slide{Source code}{Coq}{
-  \lstinputlisting[style=coqstyle]{./src/coq.v}
+  \lstinputlisting[language=Coq,style=default]{./src/coq.v}
 }
 
 \slide{Source code}{Erlang}{
-  \lstinputlisting[style=erlangstyle]{./src/erlang.erl}
+  \lstinputlisting[language=Erlang,style=default,caption=Erlang]{./src/erlang.erl}
+}
+
+\begin{frame}[fragile]{lstlisting}{}
+
+  requires \texttt{fragile} option
+
+  \begin{lstlisting}[style=default,caption={[JS]JavaScript}]
+    function() {
+      hoge;
+      poyo;
+      return this;
+    }
+  \end{lstlisting}
+\end{frame}
+
+\subsection{fuga}
+
+\slide{Image}{}{
+  \begin{figure}
+    \includegraphics[width=5cm]{./img/psg.png}
+  \end{figure}
+
+  PSG のロゴ\footnote{\url{http://www.psg.cs.titech.ac.jp}}
 }
 
 \section{Conclusion}

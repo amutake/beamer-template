@@ -1,5 +1,9 @@
+%% slide
 \newcommand{\slide}[3]{
   \begin{frame}{#1}{#2}
     #3
   \end{frame}
 }
+
+%% wide spaced itemize
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{0.4\baselineskip}}{\enditemize}

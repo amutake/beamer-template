@@ -7,10 +7,10 @@
 *.nav
 *.out
 *.fls
+*.vrb
 
-.omakedb
-.omakedb.lock
-*.omc
+*.fdb_latexmk
+*.synctex.gz*
 
 *.xbb
 
