@@ -7,9 +7,9 @@
 \definecolor{ltblue}{rgb}{0.2,0.2,1}
 %% listings
 \usepackage{listings,sty/jlisting}
-\usepackage{sty/lstcoq,sty/lsterlang }
+\usepackage{sty/lstcoq,sty/lsterlang}
 
-\usepackage{graphicx}
+\usepackage{graphicx,amsmath,fancyvrb,latexsym}
 \usepackage{sty/bcprules} % sty ディレクトリ以下にあるものは sty/hoge のように sty/ をつける
 \usepackage{sty/jtygm,type1cm}                       % フォント関連の警告を消す
 \usepackage{macros}              % my macros
@@ -53,6 +53,10 @@
 \setbeamercolor*{fine separation line}{}
 \setbeamercolor{local structure}{fg=themecolor!80!black} % enumerate, itemize の色
 
+%% url
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
 %% listings
 %% Coq
 \lstdefinestyle{coqstyle}{
@@ -79,6 +83,18 @@
   frame=tb,
   framesep=6pt,
   captionpos=b
+}
+
+%% fancyvrb
+\fvset{
+  frame=single,
+  framesep=1mm,
+  fontfamily=ttfamily,
+  fontsize=\scriptsize,
+  numbers=left,
+  framerule=.3mm,
+  numbersep=1mm,
+  commandchars=\\\{\}
 }
 
 %% タイトルページ
