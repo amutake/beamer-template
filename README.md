@@ -14,7 +14,7 @@ Fonts
 -----
 
 - Helvetica
-- DejaVu Sans Mono
+- Monaco
 - Hiragino Kaku Gothic ProN
 
 Create new slide
