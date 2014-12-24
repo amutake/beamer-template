@@ -10,10 +10,10 @@ cont: main.tex
 
 clean: main.tex
 	latexmk -C main.tex
-	rm -f *.nav *.snm *.synctex.gz
+	rm -f *.nav *.snm *.synctex.gz *.vrb
 	rm -f img/*.xbb
 
 update:
 	mkluatexfontdb -vvv
 
-.PHONY: pdf cont silent clean update
+.PHONY: pdf cont clean update
