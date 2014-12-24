@@ -11,9 +11,16 @@
 
 %% フォント設定
 %% luatexja については http://sourceforge.jp/projects/luatex-ja/wiki/FrontPage の使い方とドキュメントを参照のこと
+%% fontspec と luatexja も自動で読み込まれる
 \usepackage{luatexja-fontspec}
-\setmainfont{Baskerville}
-\setsansfont[BoldFont=Helvetica]{Helvetica Light}
+\setmainfont[
+  SmallCapsFont={Latin Modern Roman Caps}
+]{Latin Modern Roman}
+\setsansfont[
+  BoldFont={Helvetica},
+  ItalicFont={Helvetica Light Oblique},
+  BoldItalicFont={Helvetica Oblique}
+]{Helvetica Light}
 \setmonofont{Inconsolata}
 % 欧文は sans だけど日本語は main (serif) になる。日本語フォントを sans にする方法は不明
 \setmainjfont[BoldFont=Hiragino Kaku Gothic ProN W6]{Hiragino Kaku Gothic ProN W3}
