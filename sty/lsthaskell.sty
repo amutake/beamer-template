@@ -1,0 +1,31 @@
+\definecolor{dkgreen}{rgb}{0,0.4,0}
+\definecolor{dkviolet}{rgb}{0.6,0,0.4}
+\definecolor{dkblue}{rgb}{0,0,0.6}
+\definecolor{ltblue}{rgb}{0.2,0.2,1}
+
+\lstdefinelanguage{Haskell}{
+  mathescape=false,             % '$' appear often
+  texcl=false,
+  sensitive=true,
+  %% Comments
+  morecomment=[l]{--},
+  morecomment=[n]{\{-}{-\}},    % Allow nesting
+  commentstyle={\ttfamily\color{gray}},
+  %% keywords
+  morekeywords=[1]{
+    module, import, where, data, type, newtype, instance, class,
+    do, let, in, if, then, else, case, of
+  },
+  keywordstyle=[1]{\ttfamily\color{dkblue}},
+  %% string
+  morestring=[b]",
+  stringstyle=\ttfamily\color{dkviolet},
+  showstringspaces=false,
+  %% colors
+  identifierstyle={\ttfamily\color{black}},
+  %%
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  columns=[l]fullflexible,
+}

@@ -1,0 +1,30 @@
+\definecolor{dkgreen}{rgb}{0,0.4,0}
+\definecolor{dkviolet}{rgb}{0.6,0,0.4}
+\definecolor{dkblue}{rgb}{0,0,0.6}
+\definecolor{ltblue}{rgb}{0.2,0.2,1}
+
+\lstdefinelanguage{OCaml}{
+  mathescape=true,
+  texcl=false,
+  sensitive=true,
+  %% Comments
+  morecomment=[s]{(*}{*)},
+  commentstyle={\ttfamily\color{gray}},
+  %% keywords
+  morekeywords=[1]{
+    module, functor, let, rec, in, type,
+    match, with, function
+  },
+  keywordstyle=[1]{\ttfamily\color{dkblue}},
+  %% string
+  morestring=[b]",
+  stringstyle=\ttfamily\color{dkviolet},
+  showstringspaces=false,
+  %% colors
+  identifierstyle={\ttfamily\color{black}},
+  %%
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  columns=[l]fullflexible,
+}
