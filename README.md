@@ -13,9 +13,9 @@ $ brew cask install mactex
 Fonts
 -----
 
-- Helvetica Light / Helvetica
-- [Inconsolata](http://levien.com/type/myfonts/inconsolata.html)
-- Hiragino Kaku Gothic ProN W3 / Hiragino Kaku Gothic ProN W6
+- Helvetica
+- DejaVu Sans Mono
+- Hiragino Kaku Gothic ProN
 
 Create new slide
 ----------------
