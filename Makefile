@@ -16,4 +16,4 @@ clean: main.tex
 update:
 	mkluatexfontdb -vvv
 
-.PHONY: pdf cont clean
+.PHONY: pdf cont silent clean update

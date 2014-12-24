@@ -6,7 +6,6 @@
 
 $latex = 'platex %O -synctex=1 %S';
 $pdflatex = 'lualatex %O -synctex=1 -interaction=errorstopmode %S';
-$pdflatex_silent = 'xelatex %O -synctex=1 -interaction=nonstopmode %S';
 $biber = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B';
 $bibtex = 'pbibtex %O %B';
 $makeindex = 'mendex %O -U -o %D %S';
